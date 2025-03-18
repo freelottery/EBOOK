@@ -1,10 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const buyButton = document.getElementById("buyButton");
-    if (buyButton) {
-        buyButton.addEventListener("click", function() {
-            window.location.href = "";
-        });
-    }
 
    document.addEventListener("DOMContentLoaded", function() {
     const buyButton = document.getElementById("buyButton");

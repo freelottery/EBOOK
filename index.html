@@ -16,9 +16,16 @@
         <p class="price">Price: ₹10</p>
         <p class="highlight">Win up to ₹10,000! Minimum Prize ₹1,000!</p>
         
-        <!-- UPI Payment Button -->
-        <a class="buy-button" id="upiPayment" href="upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=10&cu=INR">Pay via UPI</a>
-
+        <button id="buyButton" class="buy-btn">Buy Now</button>
+        <div class="token-section">
+            <p>Enter your token ID to verify purchase:</p>
+            <input type="text" id="tokenInput" placeholder="Enter Token ID">
+            <button id="verifyButton" class="verify-btn">Verify</button>
+        </div>
+        <div id="downloadSection" class="hidden">
+            <p>Download your book here:</p>
+            <a href="book.pdf" download class="download-btn">Download PDF</a>
+        </div>
         <div class="instructions">
             <p><strong>How It Works:</strong></p>
             <ul>

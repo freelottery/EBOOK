@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const buyButton = document.getElementById("buyButton");
     if (buyButton) {
         buyButton.addEventListener("click", function() {
-            window.location.href = "";
+            window.location.href = "upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=10&cu=INR";
         });
     }
 

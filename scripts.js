@@ -9,11 +9,17 @@
         return "TOKEN" + Math.floor(100000 + Math.random() * 900000);
     }
 
-    if (buyButton) {
+     if (buyButton) {
         buyButton.addEventListener("click", function() {
-            let userToken = generateToken();
-            localStorage.setItem("userToken", userToken);
-            alert("Your unique token is: " + userToken + "\nPlease enter it to access the download.");
+            // Generate a random token
+            const token = Math.floor(100000 + Math.random() * 900000);
+            localStorage.setItem("userToken", token);
+            tokenDisplay.innerText = `Your Token Number: ${token}`;
+            tokenDisplay.style.display = "block";
+
+            setTimeout(() => {
+                window.location.href = "upi://pay?pa=yourupi@upi&pn=YourName&mc=0000&tid=123456&tr=9876543210&tn=Book+Purchase&am=10&cu=INR";
+            }, 5000); // Redirect after showing token
         });
     }
 

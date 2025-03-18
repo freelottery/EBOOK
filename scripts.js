@@ -18,7 +18,7 @@
             tokenDisplay.style.display = "block";
 
             setTimeout(() => {
-                window.location.href = "upi://pay?pa=yourupi@upi&pn=YourName&mc=0000&tid=123456&tr=9876543210&tn=Book+Purchase&am=10&cu=INR";
+                window.location.href = "upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=10&cu=INR";
             }, 5000); // Redirect after showing token
         });
     }

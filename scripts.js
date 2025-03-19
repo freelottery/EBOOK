@@ -1,63 +1,39 @@
+// scripts.js
+function purchaseTicket(price) {
+    const ticketNumber = Math.floor(100000 + Math.random() * 900000);
+    alert(`Ticket purchased successfully! Your ticket number is: ${ticketNumber}`);
+    generateTicketPDF(ticketNumber);
+}
 
-   document.addEventListener("DOMContentLoaded", function() {
-    const buyButton = document.getElementById("buyButton");
-    const tokenInput = document.getElementById("tokenInput");
-    const verifyButton = document.getElementById("verifyButton");
-    const downloadSection = document.getElementById("downloadSection");
+function generateTicketPDF(ticketNumber) {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    doc.text(`Premium Lottery Ticket`, 20, 20);
+    doc.text(`Ticket Number: ${ticketNumber}`, 20, 40);
+    doc.text(`Thank you for purchasing!`, 20, 60);
+    doc.save(`Lottery_Ticket_${ticketNumber}.pdf`);
+    alert('Your ticket PDF has been downloaded!');
+    downloadEbook();
+}
 
-    function generateToken() {
-        return "TOKEN" + Math.floor(100000 + Math.random() * 900000);
+function downloadEbook() {
+    const link = document.createElement("a");
+    link.href = "ebook.pdf"; // Replace with the actual ebook file path
+    link.download = "Winning_Strategies_Ebook.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    alert('Ebook has been downloaded!');
+}
+
+// Countdown Timer
+let countdownDays = 10;
+function updateCountdown() {
+    document.getElementById("countdown").innerText = countdownDays;
+    if (countdownDays > 0) {
+        countdownDays--;
+        setTimeout(updateCountdown, 86400000); // Update every 24 hours
     }
+}
+updateCountdown();
 
-     if (buyButton) {
-        buyButton.addEventListener("click", function() {
-            // Generate a random token
-            const token = Math.floor(100000 + Math.random() * 900000);
-            localStorage.setItem("userToken", token);
-            tokenDisplay.innerText = `Your Token Number: ${token}`;
-            tokenDisplay.style.display = "block";
-
-            setTimeout(() => {
-                window.location.href = "upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=10&cu=INR";
-            }, 5000); // Redirect after showing token
-        });
-    }
-
-    if (verifyButton) {
-        verifyButton.addEventListener("click", function() {
-            let enteredToken = tokenInput.value;
-            let storedToken = localStorage.getItem("userToken");
-            if (enteredToken === storedToken) {
-                alert("Token Verified! You can now download the book.");
-                downloadSection.style.display = "block";
-                localStorage.setItem("paymentVerified", "true");
-            } else {
-                alert("Invalid Token! Please enter the correct token.");
-            }
-        });
-    }
-
-    const countdownElement = document.getElementById("countdown");
-    if (countdownElement) {
-        let countdownTime = 744 * 60 * 60; // 24 hours in seconds
-        function updateCountdown() {
-            let hours = Math.floor(countdownTime / 3600);
-            let minutes = Math.floor((countdownTime % 3600) / 60);
-            let seconds = countdownTime % 60;
-            countdownElement.innerText = `${hours}h ${minutes}m ${seconds}s`;
-            if (countdownTime > 0) {
-                countdownTime--;
-                setTimeout(updateCountdown, 1000);
-            } else {
-                countdownElement.innerText = "Lottery Ended";
-            }
-        }
-        updateCountdown();
-    }
-
-    // Check if the user has already verified payment
-    const paymentVerified = localStorage.getItem("paymentVerified");
-    if (paymentVerified) {
-        downloadSection.style.display = "block";
-    }
-});

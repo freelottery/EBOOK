@@ -1,0 +1,50 @@
+// index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Lottery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Premium Lottery</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="how-to-play.html">How to Play</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h2>Buy a Lottery Ticket</h2>
+        <p>Over 100,000+ tickets sold! Draw in <span id="countdown"></span> days.</p>
+        <div class="lottery-cards">
+            <div class="lottery-card">
+                <h3>Standard Ticket</h3>
+                <p>Price: 10 Rs</p>
+                <button onclick="purchaseTicket(10)">Buy Now</button>
+            </div>
+            <div class="lottery-card">
+                <h3>Premium Ticket</h3>
+                <p>Price: 25 Rs</p>
+                <button onclick="purchaseTicket(25)">Buy Now</button>
+            </div>
+            <div class="lottery-card">
+                <h3>VIP Ticket</h3>
+                <p>Price: 50 Rs</p>
+                <button onclick="purchaseTicket(50)">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2008-2025 Premium Lottery. All Rights Reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,43 +1,51 @@
+// index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy & Win - Digital Book</title>
-    <meta name="description" content="Buy our exclusive digital book for ₹10 and get a chance to win up to ₹10,000! Don't miss out on this exciting opportunity!">
-    <meta name="keywords" content="digital book, win ₹10,000, online lottery, buy book and win, best ebook">
-    <meta name="author" content="saad">
+    <title>Premium Lottery</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="title">📖 Buy Our Exclusive Digital Book & Win!</div>
-        <img src="1.jpg" alt="Digital Book Cover" class="book-cover" style="width:300px; height:600px">
-        <p class="price">Price: ₹10</p>
-        <p class="highlight">Win up to ₹10,000! Minimum Prize ₹1,000!</p>
-        
-        <button id="buyButton" class="buy-btn" href="upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=10&cu=INR">Buy Now</button>
-        <div class="token-section">
-            <p>Enter your token ID to verify purchase:</p>
-            <input type="text" id="tokenInput" placeholder="Enter Token ID">
-            <button id="verifyButton" class="verify-btn">Verify</button>
-        </div>
-        <div id="downloadSection" class="hidden">
-            <p>Download your book here:</p>
-            <a href="White Pink Modern Future AI Data Science Training Course Promotion Instagram Post.pdf" download class="download-btn">Download PDF</a>
-        </div>
-        <div class="instructions">
-            <p><strong>How It Works:</strong></p>
+    <header>
+        <h1>Premium Lottery</h1>
+        <nav>
             <ul>
-                <li>Buy this exclusive digital book for just ₹10.</li>
-                <li>After payment, take a screenshot of your UPI reference ID.</li>
-                <li>Winners will be chosen based on payment reference IDs.</li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="how-to-play.html">How to Play</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <p class="highlight">You could win ₹10,000! Try your luck!</p>
-            <p class="highlight">Don't miss out! Win ₹10,000 or ₹1,000 guaranteed!</p>
-            <p class="highlight">Every ₹10 entry gives you a chance to win ₹10,000!</p>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h2>Buy a Lottery Ticket</h2>
+        <p>Over 100,000+ tickets sold! Draw in <span id="countdown"></span> days.</p>
+        <div class="lottery-cards">
+            <div class="lottery-card">
+                <h3>Standard Ticket</h3>
+                <p>Price: 10 Rs</p>
+                <button onclick="purchaseTicket(10)">Buy Now</button>
+            </div>
+            <div class="lottery-card">
+                <h3>Premium Ticket</h3>
+                <p>Price: 25 Rs</p>
+                <button onclick="purchaseTicket(25)">Buy Now</button>
+            </div>
+            <div class="lottery-card">
+                <h3>VIP Ticket</h3>
+                <p>Price: 50 Rs</p>
+                <button onclick="purchaseTicket(50)">Buy Now</button>
+            </div>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2008-2025 Premium Lottery. All Rights Reserved.</p>
+    </footer>
     <script src="scripts.js"></script>
 </body>
 </html>
+
